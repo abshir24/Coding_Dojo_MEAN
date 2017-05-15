@@ -1,0 +1,11 @@
+<div *ngIf="!this._userService.loggedIn">
+  <app-user-create></app-user-create>
+</div>
+
+<div *ngIf ="this._userService.access && this._userService.loggedIn">
+  <app-allbids></app-allbids>
+</div>
+
+<div *ngIf = "this._userService.endBid && this._userService.loggedIn">
+  <app-end-bid></app-end-bid>
+</div>

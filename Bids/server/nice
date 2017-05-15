@@ -1,0 +1,20 @@
+<!--<label for="">Product1</label>
+
+<form (submit)="addbid1(${{this._userService.loggedUser._id}})" #formData1="ngForm">
+    <input type="number" name = "amount" [(ngModel)]="newBid.amount" #amount= "ngModel">
+    <input type="submit" value="Bid!">
+</form>
+<hr>
+
+<label>Product 2</label>
+<form (submit)="addbid2({{this._userService.loggedUser._id}})" #formData2="ngForm">
+    <input type="number" name = "amount" [(ngModel)]="newBid2.amount" #amount= "ngModel">
+    <input type="submit" value="Bid!">
+</form>
+<hr>
+
+<label for="">Product 3</label>
+<form (submit)="addbid3(${{this._userService.loggedUser._id}})" #formData3="ngForm">
+    <input type="number" name = "amount" [(ngModel)]="newBid3.amount" #amount= "ngModel">
+    <input type="submit" value="Bid!">
+</form>-->

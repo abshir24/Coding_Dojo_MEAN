@@ -1,0 +1,56 @@
+<h2>Hello {{this._userService.loggedUser.Name}} Bid Now!</h2>
+
+<label for="">Product1</label>
+
+<form (submit)="addbid1()" #formData1="ngForm">
+    <input type="number" name = "amount" [(ngModel)]="newBid.amount" #amount= "ngModel" required= "required">
+    <input type="submit" value="Bid!">
+</form>
+<hr>
+<div *ngFor = "let bid of _userService.Bids1">
+    <div *ngFor = "let user of users">
+        <div *ngIf = "user._id == bid._user">
+            <p>{{user.Name }} : $ {{bid.amount}}</p>
+        </div>
+    </div>
+</div>
+<label>Product 2</label>
+<form (submit)="addbid2()" #formData2="ngForm">
+    <input type="number" name = "amount" [(ngModel)]="newBid2.amount" #amount= "ngModel" required>
+    <input type="submit" value="Bid!">
+</form>
+<hr>
+<div *ngFor = "let bid of _userService.Bids2">
+    <div *ngFor = "let user of users">
+        <div *ngIf = "user._id == bid._user">
+            <p>{{user.Name}} : $ {{bid.amount}}</p>
+        </div>
+    </div>
+</div>
+<hr>
+
+<label for="">Product 3</label>
+<form (submit)="addbid3()" #formData3="ngForm">
+    <input type="number" name = "amount" [(ngModel)]="newBid3.amount" #amount= "ngModel" required>
+    <input type="submit" value="Bid!">
+</form>
+
+<div *ngFor = "let bid of _userService.Bids3">
+    <div *ngFor = "let user of users">
+        <div *ngIf = "user._id == bid._user">
+            <p>{{user.Name}} : $ {{bid.amount}}</p>
+        </div>
+    </div>
+</div>
+<hr>
+
+<button (click) ="endBids()">End Bids</button>
+<button (click)="this._userService.logOut()">Logout</button>
+
+
+
+
+
+
+
+

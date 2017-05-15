@@ -1,0 +1,39 @@
+<div *ngFor = "let poll of this._userService.POLLS">   
+    <h1 *ngIf = "poll._id == this._userService.pollFind">{{poll.Question}}</h1>
+    <p>click the vote button to chose one</p>
+
+    <table>
+        <thead>
+            <th>Option</th>
+            <th>Current Count of Votes</th>
+            <th>Action</th>
+        </thead>
+
+        <tbody *ngIf = "poll._id == this._userService.pollFind">
+            <tr>
+                <td>{{poll.Option1}}</td>
+                <td>{{poll.Vote1}}</td>
+                <td><button (click) = "addVote1(poll._id)">Vote</button></td>
+            </tr>
+            <tr>
+                <td>{{poll.Option2}}</td>
+                <td>{{poll.Vote2}}</td>
+                <td><button (click) = "addVote2(poll._id)">Vote</button></td>
+            </tr>
+            <tr>
+                <td>{{poll.Option3}}</td>
+                <td>{{poll.Vote3}}</td>
+                <td><button (click) = "addVote3(poll._id)">Vote</button></td>
+            </tr>
+            <tr>
+                <td>{{poll.Option4}}</td>
+                <td>{{poll.Vote4}}</td>
+                <td><button (click) = "addVote4(poll._id)">Vote</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button (click)="this._userService.accessOn()">Go to Polls</button>
+</div>
+
+

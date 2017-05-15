@@ -1,0 +1,15 @@
+<div *ngIf="!this._userService.loggedIn">
+  <app-user-create></app-user-create>
+</div>
+
+<div *ngIf ="this._userService.access && this._userService.loggedIn && !this._userService.showPoll">
+  <app-mainpage></app-mainpage>
+</div>
+
+<div *ngIf ="!this._userService.access && this._userService.loggedIn && !this._userService.showPoll">
+  <app-create-poll></app-create-poll>
+</div>
+
+<div *ngIf ="this._userService.access && this._userService.loggedIn && this._userService.showPoll">
+  <app-show-poll></app-show-poll>
+</div>

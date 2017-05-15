@@ -1,0 +1,10 @@
+<h3>Hello!</h3>
+<h4>Please enter your name to join and share your ideas</h4>
+
+<h5>Create a New User</h5>
+
+<form (submit)="find()" #formData="ngForm">
+  <label>Name</label>
+  <input type="text" name="Name" [(ngModel)]="newUser.Name" #Name= "ngModel">
+  <input type="submit" value = "Enter!">
+</form>

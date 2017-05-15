@@ -1,0 +1,23 @@
+<div *ngFor = "let user of users">
+    <div *ngIf = "user._id == this._userService.bid1High._user">
+        <p>{{user.Name}} : $ {{this._userService.bid1High.amount}}</p>
+    </div>
+</div>
+<hr>
+
+<div *ngFor = "let user of users">
+    <div *ngIf = "user._id == this._userService.bid2High._user">
+        <p>{{user.Name}} : $ {{this._userService.bid2High.amount}}</p>
+    </div>
+</div>
+<hr>
+
+
+<div *ngFor = "let user of users">
+    <div *ngIf = "user._id == this._userService.bid3High._user">
+        <p>{{user.Name}} : $ {{this._userService.bid3High.amount}}</p>
+    </div>
+</div>
+<hr>
+<button (click)="startBid()">Start Bids</button>
+<button (click)="this._userService.logOut()">Logout</button>

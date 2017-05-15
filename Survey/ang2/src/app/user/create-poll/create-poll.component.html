@@ -1,0 +1,26 @@
+<h2>Put the question and options here:</h2>
+<form (submit) = "createPoll()" #formData ="ngForm">
+  <label for="">Question</label>
+  <textarea name="Question" cols="30" rows="2" [(ngModel)]="newPoll.Question" #Question= "ngModel" minlength="8" required></textarea><br>
+  <h5 *ngIf = "Question.errors?.minlength" >Question must be at least 8 characters</h5>
+  
+  <label for="">Option 1</label>
+  <input type="text" name="Option1" [(ngModel)]="newPoll.Option1" #Option1= "ngModel" minlength="3" required/><br>
+  <h5 *ngIf = "Option1.errors?.minlength">Option1 must be at least 3 characters</h5>
+
+  <label for="">Option 2</label>
+  <input type="text" name="Option2" [(ngModel)]="newPoll.Option2" #Option2= "ngModel" minlength="3" required/><br>
+  <h5 *ngIf = "Option2.errors?.minlength">Option 2 must be at least 3 characters</h5>
+
+  <label for="">Option 3</label>
+  <input type="text" name="Option3" [(ngModel)]="newPoll.Option3" #Option3= "ngModel" minlength="3" required/><br>
+  <h5 *ngIf = "Option3.errors?.minlength" >Option 3 must be at least 3 characters</h5>
+
+  <label for="">Option 4</label>
+  <input type="text" name="Option4" [(ngModel)]="newPoll.Option4" #Option4= "ngModel" minlength="3" required/><br>
+  <h5 *ngIf = "Option4.errors?.minlength">Option 4 must be at least 3 characters</h5>
+
+  <input type="submit" value = "Create Poll" [disabled]="!formData.form.valid"/><br>
+</form>
+
+<button (click)="this._userService.accessOn()">Cancel</button>
